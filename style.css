@@ -1,0 +1,34 @@
+ /* Стилі для модального вікна */
+ .modal {
+    display: none; /* Спочатку приховане */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозоре тло */
+    z-index: 1000; /* Щоб бути поверх інших елементів */`
+}
+
+/* Псевдоелемент для блюр-ефекту */
+.modal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px); /* Розмиття фону */
+    z-index: -1; /* Щоб бути позаду модального контенту */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative; /* Відносне позиціонування для правильного шару */
+    z-index: 1001; /* Вище псевдоелемента */
+}
